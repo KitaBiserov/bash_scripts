@@ -2,14 +2,14 @@
 
 
 sudo apt update && sudo apt upgrade -y
-sudo apt install aptitude 
+sudo apt install -y aptitude 
 
-sudo aptitude install zsh
+sudo aptitude install -y zsh
 
 sudo zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
-sudo aptitude install docker
+sudo aptitude install -y docker
 
-sudo aptitude install \
+sudo aptitude install -y \
     ca-certificates \
     curl \
     gnupg \
@@ -23,7 +23,9 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 
-sudo aptitude install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo aptitude install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 docker login -u kitabiserov -p 
- sudo docker run hello-world
+
+docker -v
+ 
